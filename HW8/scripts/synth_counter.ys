@@ -1,0 +1,9 @@
+# synth_counter.ys -- generic synthesis of the sequential counter
+read_verilog rtl/counter.v
+hierarchy -check -top counter
+synth -top counter
+abc -g AND,OR,XOR,MUX
+opt_clean
+stat
+write_verilog -noattr out/counter_netlist.v
+show -format dot -prefix out/counter_netlist

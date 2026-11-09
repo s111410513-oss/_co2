@@ -1,0 +1,10 @@
+# lec.ys -- combinational equivalence checking (LEC) with a miter circuit
+# One SAT call covers all 2^19 = 524,288 input combinations.
+read_verilog rtl/alu.v
+read_verilog rtl/alu_ref.v
+read_verilog rtl/lec_alu.v
+prep -top lec_alu
+flatten        # merge both implementations into one module for the SAT solver
+opt -full
+stat
+sat -verify -prove mismatch 0 -show-inputs

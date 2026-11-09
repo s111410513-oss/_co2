@@ -1,0 +1,13 @@
+# synth_fpga.ys -- technology mapping to a real FPGA fabric (Lattice iCE40)
+# Same RTL, different technology target: LUT4 + carry chain + DFF.
+read_verilog rtl/alu.v
+read_verilog rtl/counter.v
+synth_ice40 -top alu -json out/alu_ice40.json
+stat
+ltp -noff
+
+design -reset
+read_verilog rtl/counter.v
+synth_ice40 -top counter -json out/counter_ice40.json
+stat
+ltp -noff

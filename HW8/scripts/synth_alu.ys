@@ -1,0 +1,9 @@
+# synth_alu.ys -- generic synthesis + gate mapping of the ALU
+read_verilog rtl/alu.v
+hierarchy -check -top alu
+synth -top alu
+abc -g AND,OR,XOR,MUX
+opt_clean
+stat
+write_verilog -noattr out/alu_netlist.v
+show -format dot -prefix out/alu_netlist
