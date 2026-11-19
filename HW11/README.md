@@ -1,7 +1,5 @@
 # HW11 — nand2tetris VM Translator
 
-本作業參考 [ChunYang0808/_co 的第 08 章專案](https://github.com/ChunYang0808/_co/tree/main/08) 的資料夾規劃方式，將 VM Translator、Program Flow、Function Calls、測試與範例分開管理。
-
 本版本使用 **JavaScript（Node.js）** 撰寫，不需要安裝 Python 或第三方 npm 套件。
 
 ## 專案結構
