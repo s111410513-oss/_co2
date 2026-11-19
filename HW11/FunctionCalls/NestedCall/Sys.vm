@@ -1,0 +1,8 @@
+function Sys.init 0
+push constant 4000
+pop pointer 0
+push constant 5000
+pop pointer 1
+call Main.fibonacci 1
+label END
+goto END

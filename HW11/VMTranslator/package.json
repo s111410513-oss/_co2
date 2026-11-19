@@ -1,0 +1,14 @@
+{
+  "name": "nand2tetris-vm-translator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "nand2tetris Project 7 and Project 8 VM Translator",
+  "main": "VMTranslator.js",
+  "scripts": {
+    "start": "node VMTranslator.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
